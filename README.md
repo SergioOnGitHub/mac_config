@@ -2,21 +2,29 @@
 All my Mac applications, homebrew, terminal, configs.
 
 
-- [MacBook I am using](#macbook-i-am-using)
-- [Quick Launching](#quick-launching)
-- [Homebrew](#homebrew)
-- [Window Management](#window-management)
-- [App Switching](#app-switching)
-- [Hidden Bar](#hidden-bar)
-- [System Stats Widgets](#system-stats-widgets)
-- [Menu Bar Calendar](#menu-bar-calendar)
-- [Terminal](#terminal)
-  - [Install Oh My Zsh](#install-oh-my-zsh)
-  - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
-  - [Configure PowerLevel10K](#configure-powerlevel10k)
-  - [Install ZSH Plugins](#install-zsh-plugins)
-  - [iTerm2 Configuration](#iterm2-configuration)
-- [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
+- [mac\_config](#mac_config)
+  - [MacBook I am using](#macbook-i-am-using)
+  - [Homebrew](#homebrew)
+  - [Quick Launching](#quick-launching)
+  - [Window Management](#window-management)
+  - [App Switching](#app-switching)
+  - [Hidden Bar](#hidden-bar)
+  - [System Stats Widgets](#system-stats-widgets)
+  - [Menu Bar Calendar](#menu-bar-calendar)
+  - [Terminal](#terminal)
+    - [Install Oh My Zsh](#install-oh-my-zsh)
+    - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
+    - [Configure PowerLevel10K](#configure-powerlevel10k)
+    - [Change iTerm2 Colors to My Custom Theme](#change-iterm2-colors-to-my-custom-theme)
+    - [Install ZSH Plugins](#install-zsh-plugins)
+      - [Install zsh-autosuggestions:](#install-zsh-autosuggestions)
+      - [Install zsh-syntax-highlighting:](#install-zsh-syntax-highlighting)
+    - [iTerm2 Configuration](#iterm2-configuration)
+  - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
+    - [Formulae](#formulae)
+    - [Casks](#casks)
+    - [Apps downloaded from the web](#apps-downloaded-from-the-web)
+      - [Cisco Packet Tracer](#cisco-packet-tracer)
 
 
 ## MacBook I am using
@@ -24,11 +32,6 @@ MacBook Air M1, 2020
 Memory 8GB  
 macOS 14.5  
 
-## Quick Launching
-
-```sh
-brew install raycast
-```
 
 
 ## Homebrew
@@ -68,6 +71,13 @@ insomnia
 ```sh
 xargs brew install < apps.txt
 ```
+
+## Quick Launching
+
+```sh
+brew install raycast
+```
+
 
 ## Window Management
 RayCast has this feature built in, but I am still using a separate app for this.
