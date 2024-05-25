@@ -2,7 +2,18 @@
 All my Mac applications, homebrew, terminal, configs.
 
 
-## MacBook I am using:
+- [MacBook I am using](#macbook-i-am-using)
+- [Quick Launching](#quick-launching)
+- [Homebrew](#homebrew)
+- [Window Management](#window-management)
+- [App Switching](#app-switching)
+- [Hidden Bar](#hidden-bar)
+- [System Stats Widgets](#system-stats-widgets)
+- [Menu Bar Calendar](#menu-bar-calendar)
+- [Terminal](#terminal)
+- [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
+
+## MacBook I am using
 MacBook Air M1, 2020  
 Memory 8GB  
 macOS 14.5  
@@ -14,7 +25,7 @@ brew install raycast
 ```
 
 
-## HOMEBREW
+## Homebrew
 
 [Homebrew](https://brew.sh/) allows us to install tools and apps from the command line.
 
