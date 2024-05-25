@@ -250,8 +250,8 @@ source ~/.zshrc
 
 
 
-
-## ==> Formulae  
+## Formulae, Casks and Apps from the web
+### Formulae  
 ```
 elixir  
 gcc  
@@ -259,7 +259,7 @@ neovim
 node
 ```
 
-## ==> Casks  
+### Casks  
 ```
 alfred  
 pastebot  
@@ -277,3 +277,13 @@ iterm2
 zoom  
 obsidian  
 ```
+
+
+### Apps downloaded from the web
+#### Cisco Packet Tracer
+Log in inside [Cisco Packet Tracer](https://www.netacad.com/es/courses/packet-tracer). 
+On menu bar, click resources, install packet tracer
+
+
+
+
