@@ -18,15 +18,6 @@ All my Mac applications, homebrew, terminal, configs.
   - [iTerm2 Configuration](#iterm2-configuration)
 - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
 
-### Install Oh My Zsh
-### Install PowerLevel10K Theme for Oh My Zsh
-### Configure PowerLevel10K
-### Change iTerm2 Colors to My Custom Theme
-### Install ZSH Plugins
-#### Install zsh-autosuggestions:
-#### Install zsh-syntax-highlighting:
-### iTerm2 Configuration
-
 
 ## MacBook I am using
 MacBook Air M1, 2020  
