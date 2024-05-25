@@ -11,7 +11,22 @@ All my Mac applications, homebrew, terminal, configs.
 - [System Stats Widgets](#system-stats-widgets)
 - [Menu Bar Calendar](#menu-bar-calendar)
 - [Terminal](#terminal)
+  - [Install Oh My Zsh](#install-oh-my-zsh)
+  - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
+  - [Configure PowerLevel10K](#configure-powerlevel10k)
+  - [Install ZSH Plugins](#install-zsh-plugins)
+  - [iTerm2 Configuration](#iterm2-configuration)
 - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
+
+### Install Oh My Zsh
+### Install PowerLevel10K Theme for Oh My Zsh
+### Configure PowerLevel10K
+### Change iTerm2 Colors to My Custom Theme
+### Install ZSH Plugins
+#### Install zsh-autosuggestions:
+#### Install zsh-syntax-highlighting:
+### iTerm2 Configuration
+
 
 ## MacBook I am using
 MacBook Air M1, 2020  
@@ -294,6 +309,12 @@ obsidian
 #### Cisco Packet Tracer
 Log in inside [Cisco Packet Tracer](https://www.netacad.com/es/courses/packet-tracer). 
 On menu bar, click resources, install packet tracer
+
+
+
+
+
+
 
 
 
