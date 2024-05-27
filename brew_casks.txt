@@ -1,0 +1,16 @@
+alt-tab  
+rectangle  
+anaconda  
+scroll-reverser  
+discord  
+spotify  
+firefox@developer-edition  
+visual-studio-code  
+google-chrome  
+whatsapp  
+iterm2  
+zoom  
+obsidian  
+itsycal
+stats
+hiddenbar
