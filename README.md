@@ -197,6 +197,17 @@ source ~/.zshrc
 
 
 
+## GNU Compiler
+```
+brew install gcc
+```
+### Add the path to vs Code
+Open Command Palette and search 'C/C++: Edit Configurations (JSON)' and add the following line
+```
+"compilerPath": "/opt/homebrew/bin/g++-14"
+```
+
+
 ## Window Management
 RayCast has this feature built in, but I am still using a separate app for this.
 
