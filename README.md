@@ -5,26 +5,32 @@ All my Mac applications, homebrew, terminal, configs.
 - [mac\_config](#mac_config)
   - [MacBook I am using](#macbook-i-am-using)
   - [Homebrew](#homebrew)
-        - [Formulae](#formulae)
-        - [Casks](#casks)
   - [Quick Launching](#quick-launching)
+  - [Browser](#browser)
+    - [Arc](#arc)
+    - [Firefox Developer Edition](#firefox-developer-edition)
+    - [Firefox](#firefox)
+  - [Finder](#finder)
+  - [Dock](#dock)
   - [Terminal](#terminal)
     - [Install Oh My Zsh](#install-oh-my-zsh)
     - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
+      - [Update VSCode Terminal Font](#update-vscode-terminal-font)
     - [Configure PowerLevel10K](#configure-powerlevel10k)
     - [Install ZSH Plugins](#install-zsh-plugins)
       - [Install zsh-autosuggestions:](#install-zsh-autosuggestions)
       - [Install zsh-syntax-highlighting:](#install-zsh-syntax-highlighting)
+  - [GNU Compiler](#gnu-compiler)
+    - [Add the path to vs Code](#add-the-path-to-vs-code)
   - [Window Management](#window-management)
   - [App Switching](#app-switching)
   - [Hidden Bar](#hidden-bar)
-  - [System Stats Widgets](#system-stats-widgets)
   - [Menu Bar Calendar](#menu-bar-calendar)
   - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
-    - [Formulae](#formulae-1)
-    - [Casks](#casks-1)
     - [Apps downloaded from the web](#apps-downloaded-from-the-web)
       - [Cisco Packet Tracer](#cisco-packet-tracer)
+    - [Formulae](#formulae)
+    - [Casks](#casks)
 
 
 ## MacBook I am using
@@ -52,32 +58,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 You can install all your apps in one go by placing them all into a text file and then running brew install:
-##### Formulae
-```
-elixir  
-gcc  
-neovim  
-node
-```
-##### Casks
-```
-alt-tab  
-rectangle  
-anaconda  
-scroll-reverser  
-discord  
-spotify  
-firefox@developer-edition  
-visual-studio-code  
-google-chrome  
-whatsapp  
-iterm2  
-zoom  
-obsidian  
-itsycal
-stats
-hiddenbar
-```
 
 ```sh
 xargs brew install < apps.txt
@@ -89,18 +69,62 @@ xargs brew install < apps.txt
 brew install raycast
 ```
 
+I disable the shortcut for spotlight by doing the following
+* System Settings
+  * Keyboard
+    * Keyboard Shortcuts
+      * Spotlight
+        * Disable Show Spotlight search
+
+## Browser
+### Arc
+```
+brew install --cask arc
+```
+
+### Firefox Developer Edition
+```
+brew install --cask firefox@developer-edition
+```
+
+### Firefox
+```
+brew install --cask firefox
+```
+
+
+## Finder
+On `View`, enable the following: `Show status bar`, `Show path bar`.
+
+Create ScreenShots folder. To change where the Screenshots are save, pres `CMD` + `Shift` + `5` then click on `options`, then `other location` and select your desire folder.
+
+
+## Dock
+* System settings
+  * Desktop and dock
+    * Reduce Size and turn off magnification
+    * Enable `automatically hide and show the dock`
+    * Disable `suggested apps`
+
+To make the Dock instantly leap back into view when it’s needed use the following comman in the terminal.
+```
+defaults write com.apple.dock autohide-time-modifier -int 0; killall Dock
+```
+If you’d like the animation for the dock to reappear to last for a split-second, use the following:
+
+```
+defaults write com.apple.dock autohide-time-modifier -float 0.15; killall Dock
+```
+
+
+
+For futher info check the following [post](https://apple.stackexchange.com/questions/33600/how-can-i-make-auto-hide-show-for-the-dock-faster).
+
+
+
+
 
 ## Terminal
-
-I prefer [iTerm2](https://iterm2.com/) because:
-* Lots of customization options
-* Clickable links
-* Native OS notifications
-
-There are a lot of options for a terminal replacement, but I've been using iTerm2 for years and it works great for my needs.
-
-Checkout their documentation for more info on what iTerm2 can do: [https://iterm2.com/documentation.html](https://iterm2.com/documentation.html)
-
 
 ```
 brew install --cask iterm2
@@ -114,8 +138,8 @@ Once installed, launch it and customize the settings / preferences to your likin
 * Profiles
   * Default
       * General -> Working Directory -> Reuse previous session's directory
+      * Colors -> Disable `Use different colors for light mode and dark mode` -> Editing: Dark Mode
       * Keys -> Key Mappings -> Presets -> Natural Text Editing
-          * This allows me to use the [keyboard shortcuts](https://gist.github.com/w3cj/022081eda22081b82c52) I know and love inside of iTerm2
 
 
 ### Install Oh My Zsh
@@ -138,7 +162,6 @@ vim ~/.zshrc
 ```
 
 Change the value of “ZSH_THEME” as shown below:
-
 ```
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
@@ -154,10 +177,9 @@ source ~/.zshrc
 Install Meslo Nerd Font
 Install the font by pressing “y” and then quit iTerm2.
 
-Update VSCode Terminal Font
+#### Update VSCode Terminal Font
 
 Open settings.json and add this line:
-
 ```
 "terminal.integrated.fontFamily": "MesloLGS NF"
 ```
@@ -198,14 +220,31 @@ source ~/.zshrc
 
 
 ## GNU Compiler
+Cool tutorial for installing gcc for competitive programming on Mac: https://youtu.be/CZ7Mf7qxbIU?si=3W3-3xKQRHRpX072
+
 ```
 brew install gcc
 ```
+
+Enter the following location
+``` 
+cd /opt/homebrew/bin
+```
+The run the following command, the tutorial uses `g++-11` but currently for aug 2024 gcc installs `g++-14`
+```
+ln -s g++-14 g++
+```
+If done correctly by running `g++ --version` you should see the gcc compiler instead of `clang` compiler.
+
+
+
 ### Add the path to vs Code
 Open Command Palette and search 'C/C++: Edit Configurations (JSON)' and add the following line
 ```
 "compilerPath": "/opt/homebrew/bin/g++-14"
 ```
+
+
 
 
 ## Window Management
@@ -215,45 +254,29 @@ I use [rectangle](https://rectangleapp.com/) to move and resize windows using ke
 
 I highly recommend installing this and memorizing the keyboard shortcuts. Fluid and seamless window management is key to being productive while coding.
 
-Search for `rectangle` in RayCast `brew search` or:
-
 ```
 brew install rectangle
 ```
 
 
 ## App Switching
-I use an app switcher called [AltTab](https://alt-tab-macos.netlify.app/). It shows full window previews, and has an option to show a preview for every open window in all applications (even minimized ones).
-
-I replace the built-in `CMD+TAB` shortcut with AltTab.
-
-Search for `alt-tab` in RayCast `brew search` or:
+I use an app switcher called [AltTab](https://alt-tab-macos.netlify.app/). It shows full window previews, and has an option to show a preview for every open window in all applications.
 
 ```sh
 brew install alt-tab
 ```
+I replace the built-in `CMD + TAB` shortcut with AltTab.
+
+I change the select previous window shortcut to `SHIFT + TAB`. To do this enter configuration, hit controls and search for the shortcut, is in the section `While open, press:`. 
+
 
 ## Hidden Bar
 
 If you have several apps running that have menu bar icons, [Hidden Bar](https://github.com/dwarvesf/hidden) will let you choose which ones should be hidden after a timeout. This cleans things up if you have a ton of background apps running.
 
-Search for `hiddenbar` in RayCast `brew search` or:
-
 ```sh
 brew install hiddenbar
 ``` 
-
-## System Stats Widgets
-
-I use [stats](https://github.com/exelban/stats) to see my network traffic, CPU temp / usage and RAM usage at a glance.
-
-In each widget, a key setting to look for is under "widget settings", choose "merge widgets into one".
-
-Search for `stats` in RayCast `brew search` or:
-
-```sh
-brew install stats
-```
 
 ## Menu Bar Calendar
 
@@ -263,18 +286,17 @@ I like to have a calendar in the menu bar that I can quickly look at. stats does
 brew install itsycal
 ```
 
-itsycal shows the date, so I hide the date in the system menu bar widget:
-
-* System Preferences
-  * Dock & Menu Bar
-      * Clock
-          * Show Date -> Never
-          * Show Day of Week -> No
 
 
 
 
 ## Formulae, Casks and Apps from the web
+
+### Apps downloaded from the web
+#### Cisco Packet Tracer
+Log in inside [Cisco Packet Tracer](https://www.netacad.com/es/courses/packet-tracer). 
+On menu bar, click resources, install packet tracer
+
 ### Formulae  
 ```
 elixir  
@@ -303,11 +325,6 @@ stats
 hiddenbar
 ```
 
-
-### Apps downloaded from the web
-#### Cisco Packet Tracer
-Log in inside [Cisco Packet Tracer](https://www.netacad.com/es/courses/packet-tracer). 
-On menu bar, click resources, install packet tracer
 
 
 
