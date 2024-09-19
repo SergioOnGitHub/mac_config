@@ -122,16 +122,6 @@ I disable the shortcut for spotlight by doing the following
 brew install --cask arc
 ```
 
-### Firefox Developer Edition
-```
-brew install --cask firefox@developer-edition
-```
-
-### Firefox
-```
-brew install --cask firefox
-```
-
 
 ## Finder
 On `View`, enable the following: `Show status bar`, `Show path bar`.
@@ -285,20 +275,6 @@ Open Command Palette and search 'C/C++: Edit Configurations (JSON)' and add the 
 ```
 
 
-
-
-## Window Management
-RayCast has this feature built in, but I am still using a separate app for this.
-
-I use [rectangle](https://rectangleapp.com/) to move and resize windows using keyboard shortcuts. 
-
-I highly recommend installing this and memorizing the keyboard shortcuts. Fluid and seamless window management is key to being productive while coding.
-
-```
-brew install rectangle
-```
-
-
 ## App Switching
 I use an app switcher called [AltTab](https://alt-tab-macos.netlify.app/). It shows full window previews, and has an option to show a preview for every open window in all applications.
 
@@ -316,19 +292,20 @@ If you have several apps running that have menu bar icons, [Hidden Bar](https://
 
 ```sh
 brew install hiddenbar
-``` 
-
-## Menu Bar Calendar
-
-I like to have a calendar in the menu bar that I can quickly look at. stats does not include one, so I found [itsycal](https://www.mowglii.com/itsycal/).
-
-```sh
-brew install itsycal
 ```
 
 
 
+## Window Management
+RayCast has this feature built in, but I am still using a separate app for this.
 
+I use [rectangle](https://rectangleapp.com/) to move and resize windows using keyboard shortcuts. 
+
+I highly recommend installing this and memorizing the keyboard shortcuts. Fluid and seamless window management is key to being productive while coding.
+
+```sh
+brew install rectangle
+```
 
 ## Formulae, Casks and Apps from the web
 
