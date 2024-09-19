@@ -38,7 +38,47 @@ MacBook Air M1, 2020
 Memory 8GB  
 macOS 14.5  
 
+## Initial configuration
+Trackpad
+- Disable Force Click
+- Disable Look up
+- Secondary Click Click in bottom right corner
+- Enable tap to click
 
+- More Gestures
+- Off Swipe beteen pages and full screen
+
+  Desktop and Dock
+  Remove from Dock all apps
+  - Position on screen Right
+  - Size Small
+  - Automattically hide and show the Dock
+ 
+  
+  Finder
+ 
+  New finder Window shows home Directory
+Enable the following on SideBar
+  Documents
+  Downloads
+  Home Directory
+  Sergios Macbook air
+  Create Dev folder inside home directory
+  Create Uni folder inside home directory
+  Create Obsidian Vault folder inside
+  Create ScreenShots folder inside Pictures
+  Change where screenShots are save:
+  CMD + SHIFT + 5
+  - options
+  - other location
+  - Select screenShots
+  Add folders created to your Sidebar
+
+
+  View Configuration
+  Show path bar
+  Show status bar
+  
 
 ## Homebrew
 
