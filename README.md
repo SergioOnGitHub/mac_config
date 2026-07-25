@@ -8,10 +8,12 @@ All my Mac applications, homebrew, terminal, configs.
   - [Quick Launching](#quick-launching)
   - [Browser](#browser)
     - [Arc](#arc)
-    - [Firefox Developer Edition](#firefox-developer-edition)
-    - [Firefox](#firefox)
   - [Finder](#finder)
   - [Dock](#dock)
+  - [Git and SSH](#git-and-ssh)
+    - [Configure Git identity](#configure-git-identity)
+    - [Generate an SSH key](#generate-an-ssh-key)
+    - [Copy the SSH public key](#copy-the-ssh-public-key)
   - [Terminal](#terminal)
     - [Install Oh My Zsh](#install-oh-my-zsh)
     - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
@@ -25,7 +27,6 @@ All my Mac applications, homebrew, terminal, configs.
   - [Window Management](#window-management)
   - [App Switching](#app-switching)
   - [Hidden Bar](#hidden-bar)
-  - [Menu Bar Calendar](#menu-bar-calendar)
   - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
     - [Apps downloaded from the web](#apps-downloaded-from-the-web)
       - [Cisco Packet Tracer](#cisco-packet-tracer)
@@ -92,7 +93,7 @@ To install it, open up the built in `Terminal` app and run this command:
 Add Homebrew To Path
 After installing, add it to the path (replace ”[username]” with your actual username):
 
-```
+```sh
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/[username]/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
@@ -121,7 +122,7 @@ I disable the shortcut for spotlight by doing the following
 
 ### Arc
 
-```
+```sh
 brew install --cask arc
 ```
 
@@ -141,21 +142,60 @@ Create ScreenShots folder. To change where the Screenshots are save, pres `CMD` 
 
 To make the Dock instantly leap back into view when it’s needed use the following comman in the terminal.
 
-```
+```sh
 defaults write com.apple.dock autohide-time-modifier -int 0; killall Dock
 ```
 
 If you’d like the animation for the dock to reappear to last for a split-second, use the following:
 
-```
+```sh
 defaults write com.apple.dock autohide-time-modifier -float 0.15; killall Dock
 ```
 
 For futher info check the following [post](https://apple.stackexchange.com/questions/33600/how-can-i-make-auto-hide-show-for-the-dock-faster).
 
+## Git and SSH
+
+### Configure Git identity
+
+Set the name and email that Git will attach to new commits. Replace the example
+values with your own:
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+Verify the global configuration:
+
+```sh
+git config --list
+```
+
+### Generate an SSH key
+
+Generate an Ed25519 key pair, using the email associated with your Git hosting
+account:
+
+```sh
+ssh-keygen -t ed25519 -C "you@example.com"
+```
+
+Press Enter to accept the default location (`~/.ssh/id_ed25519`) and protect the
+private key with a passphrase when prompted.
+
+### Copy the SSH public key
+
+Copy the public key to the macOS clipboard, then add it to your Git hosting
+account:
+
+```sh
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
 ## Terminal
 
-```
+```sh
 brew install --cask iterm2
 ```
 
@@ -174,7 +214,7 @@ Once installed, launch it and customize the settings / preferences to your likin
 
 Run this to install Oh My Zsh:
 
-```
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
@@ -182,19 +222,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Run this to install PowerLevel10K:
 
-```
+```sh
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 
 Now that it’s installed, open the ”~/.zshrc” file with your preferred editor, I will use Vim as shown below:
 
-```
+```sh
 vim ~/.zshrc
 ```
 
 Change the value of “ZSH_THEME” as shown below:
 
-```
+```sh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
@@ -202,7 +242,7 @@ If using VIM use **i** to enter **insert** mode(edit), use **esc** to return to 
 
 To reflect this change on your terminal, restart it or run this command:
 
-```
+```sh
 source ~/.zshrc
 ```
 
@@ -213,7 +253,7 @@ Install the font by pressing “y” and then quit iTerm2.
 
 Open settings.json and add this line:
 
-```
+```sh
 "terminal.integrated.fontFamily": "MesloLGS NF"
 ```
 
@@ -221,7 +261,7 @@ Open settings.json and add this line:
 
 Restart iTerm2. You should now be seeing the PowerLevel10K configuration process. If you don’t, run the following:
 
-```
+```sh
 p10k configure
 ```
 
@@ -229,25 +269,25 @@ p10k configure
 
 #### Install zsh-autosuggestions
 
-```
+```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 #### Install zsh-syntax-highlighting
 
-```
+```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 Open the ”~/.zshrc” file in your desired editor and modify the plugins line to what you see below.
 
-```
+```sh
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 ```
 
 Load these new plugins by running:
 
-```
+```sh
 source ~/.zshrc
 ```
 
@@ -255,19 +295,19 @@ source ~/.zshrc
 
 Cool tutorial for installing gcc for competitive programming on Mac: <https://youtu.be/CZ7Mf7qxbIU?si=3W3-3xKQRHRpX072>
 
-```
+```sh
 brew install gcc
 ```
 
 Enter the following location
 
-```
+```sh
 cd /opt/homebrew/bin
 ```
 
 The run the following command, the tutorial uses `g++-11` but currently for aug 2024 gcc installs `g++-14`
 
-```
+```sh
 ln -s g++-14 g++
 ```
 
@@ -277,7 +317,7 @@ If done correctly by running `g++ --version` you should see the gcc compiler ins
 
 Open Command Palette and search 'C/C++: Edit Configurations (JSON)' and add the following line
 
-```
+```sh
 "compilerPath": "/opt/homebrew/bin/g++-14"
 ```
 
@@ -324,7 +364,7 @@ On menu bar, click resources, install packet tracer
 
 ### Formulae  
 
-```
+```text
 elixir  
 gcc  
 neovim  
@@ -333,7 +373,7 @@ node
 
 ### Casks  
 
-```
+```text
 alt-tab  
 rectangle  
 anaconda  
