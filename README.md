@@ -14,22 +14,12 @@ All my Mac applications, homebrew, terminal, configs.
     - [Configure Git identity](#configure-git-identity)
     - [Generate an SSH key](#generate-an-ssh-key)
     - [Copy the SSH public key](#copy-the-ssh-public-key)
-  - [Terminal](#terminal)
-    - [Install Oh My Zsh](#install-oh-my-zsh)
-    - [Install PowerLevel10K Theme for Oh My Zsh](#install-powerlevel10k-theme-for-oh-my-zsh)
-      - [Update VSCode Terminal Font](#update-vscode-terminal-font)
-    - [Configure PowerLevel10K](#configure-powerlevel10k)
-    - [Install ZSH Plugins](#install-zsh-plugins)
-      - [Install zsh-autosuggestions:](#install-zsh-autosuggestions)
-      - [Install zsh-syntax-highlighting:](#install-zsh-syntax-highlighting)
   - [GNU Compiler](#gnu-compiler)
     - [Add the path to vs Code](#add-the-path-to-vs-code)
   - [Window Management](#window-management)
   - [App Switching](#app-switching)
   - [Hidden Bar](#hidden-bar)
-  - [Formulae, Casks and Apps from the web](#formulae-casks-and-apps-from-the-web)
-    - [Apps downloaded from the web](#apps-downloaded-from-the-web)
-      - [Cisco Packet Tracer](#cisco-packet-tracer)
+  - [Formulae and Casks](#formulae-and-casks)
     - [Formulae](#formulae)
     - [Casks](#casks)
 
@@ -193,104 +183,6 @@ account:
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-## Terminal
-
-```sh
-brew install --cask iterm2
-```
-
-Once installed, launch it and customize the settings / preferences to your liking. These are my preferred settings:
-
-- Appearance
-  - Theme
-    - Minimal
-- Profiles
-  - Default
-    - General -> Working Directory -> Reuse previous session's directory
-    - Colors -> Disable `Use different colors for light mode and dark mode` -> Editing: Dark Mode
-    - Keys -> Key Mappings -> Presets -> Natural Text Editing
-
-### Install Oh My Zsh
-
-Run this to install Oh My Zsh:
-
-```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### Install PowerLevel10K Theme for Oh My Zsh
-
-Run this to install PowerLevel10K:
-
-```sh
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-```
-
-Now that it’s installed, open the ”~/.zshrc” file with your preferred editor, I will use Vim as shown below:
-
-```sh
-vim ~/.zshrc
-```
-
-Change the value of “ZSH_THEME” as shown below:
-
-```sh
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-If using VIM use **i** to enter **insert** mode(edit), use **esc** to return to **normal** mode, use **:** to enter **command** mode then type **w** to save and **q** to exit.
-
-To reflect this change on your terminal, restart it or run this command:
-
-```sh
-source ~/.zshrc
-```
-
-Install Meslo Nerd Font
-Install the font by pressing “y” and then quit iTerm2.
-
-#### Update VSCode Terminal Font
-
-Open settings.json and add this line:
-
-```sh
-"terminal.integrated.fontFamily": "MesloLGS NF"
-```
-
-### Configure PowerLevel10K
-
-Restart iTerm2. You should now be seeing the PowerLevel10K configuration process. If you don’t, run the following:
-
-```sh
-p10k configure
-```
-
-### Install ZSH Plugins
-
-#### Install zsh-autosuggestions
-
-```sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-#### Install zsh-syntax-highlighting
-
-```sh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-Open the ”~/.zshrc” file in your desired editor and modify the plugins line to what you see below.
-
-```sh
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
-```
-
-Load these new plugins by running:
-
-```sh
-source ~/.zshrc
-```
-
 ## GNU Compiler
 
 Cool tutorial for installing gcc for competitive programming on Mac: <https://youtu.be/CZ7Mf7qxbIU?si=3W3-3xKQRHRpX072>
@@ -305,10 +197,10 @@ Enter the following location
 cd /opt/homebrew/bin
 ```
 
-The run the following command, the tutorial uses `g++-11` but currently for aug 2024 gcc installs `g++-14`
+The run the following command, the tutorial uses `g++-11` but currently for jul 2026 gcc installs `g++-16`
 
 ```sh
-ln -s g++-14 g++
+ln -s g++-16 g++
 ```
 
 If done correctly by running `g++ --version` you should see the gcc compiler instead of `clang` compiler.
@@ -353,14 +245,7 @@ I highly recommend installing this and memorizing the keyboard shortcuts. Fluid 
 brew install rectangle
 ```
 
-## Formulae, Casks and Apps from the web
-
-### Apps downloaded from the web
-
-#### Cisco Packet Tracer
-
-Log in inside [Cisco Packet Tracer](https://www.netacad.com/es/courses/packet-tracer).
-On menu bar, click resources, install packet tracer
+## Formulae and Casks
 
 ### Formulae  
 
@@ -369,25 +254,33 @@ elixir
 gcc  
 neovim  
 node
+uv
 ```
 
 ### Casks  
 
 ```text
-alt-tab  
-rectangle  
-anaconda  
-scroll-reverser  
-discord  
-spotify  
-firefox@developer-edition  
-visual-studio-code  
-google-chrome  
-whatsapp  
-iterm2  
-zoom  
-obsidian  
+alt-tab
+arc
+chatgpt
+codex
+codex-app
+discord
+font-jetbrains-mono
+font-jetbrains-mono-nerd-font
+ghostty
+google-chrome
 itsycal
-stats
-hiddenbar
+karabiner-elements
+microsoft-office
+obsidian
+postman
+rectangle
+scroll-reverser
+spotify
+ticktick
+visual-studio-code
+whatsapp
+zen
+zoom
 ```
